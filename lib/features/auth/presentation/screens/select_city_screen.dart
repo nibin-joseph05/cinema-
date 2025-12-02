@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cinema_plus/core/theme/app_colors.dart';
 import 'package:cinema_plus/core/theme/text_styles.dart';
 import 'package:cinema_plus/features/auth/presentation/widgets/primary_button.dart';
-import 'package:cinema_plus/features/auth/presentation/widgets/gradient_dropdown.dart';
 
+import '../../../../app/router.dart';
 import '../../../../core/errors/app_snackbar.dart';
 import '../widgets/city_select_field.dart';
 
@@ -80,7 +80,7 @@ class _SelectCityScreenState extends State<SelectCityScreen> {
                   //   return;
                   // }
 
-                  // TODO → navigate to next (Home or Login)
+                  Navigator.pushNamed(context, AppRouter.login);
                 },
               ),
 
