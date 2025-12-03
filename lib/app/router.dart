@@ -3,6 +3,7 @@ import 'package:cinema_plus/features/splash/presentation/screens/splash_screen.d
 import 'package:cinema_plus/features/auth/presentation/screens/welcome_screen.dart';
 
 import '../features/auth/presentation/screens/login_screen.dart';
+import '../features/auth/presentation/screens/register_screen.dart';
 import '../features/auth/presentation/screens/select_city_screen.dart';
 
 class AppRouter {
@@ -10,6 +11,7 @@ class AppRouter {
   static const welcome = '/welcome';
   static const selectCity = '/select-city';
   static const login = '/login';
+  static const register = '/register';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -21,6 +23,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SelectCityScreen());
       case login:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
+      case register:
+        return MaterialPageRoute(builder: (_) => const RegisterScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());

@@ -4,6 +4,8 @@ import 'package:cinema_plus/core/theme/text_styles.dart';
 import 'package:cinema_plus/features/auth/presentation/widgets/text_field.dart';
 import 'package:cinema_plus/features/auth/presentation/widgets/primary_button.dart';
 
+import '../../../../app/router.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -117,16 +119,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontSize: 15,
                       ),
                     ),
-                    ShaderMask(
-                      shaderCallback: (bounds) => const LinearGradient(
-                        colors: [Color(0xFFF55951), Color(0xFFE3006F)],
-                      ).createShader(bounds),
-                      child: const Text(
-                        "Create one",
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRouter.register);
+                      },
+                      child: ShaderMask(
+                        shaderCallback: (bounds) => const LinearGradient(
+                          colors: [Color(0xFFF55951), Color(0xFFE3006F)],
+                        ).createShader(bounds),
+                        child: const Text(
+                          "Create one",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
